@@ -1,5 +1,5 @@
 body {
-    background-color: #5c7cfa;
+    background-color: rgb(95, 127, 255);
 }
 .header {
     display:inline-flex;
@@ -8,7 +8,7 @@ h1 {
     color: rgb(255, 255, 255);
     font-family: Coustard;
     font-weight:900;
-    font-size: 3.0em;
+    font-size: 5.0em;
     padding: 20px 0 20px 0;
     display:inline;
 }
@@ -16,8 +16,22 @@ h3 {
     color: rgb(255, 255, 255);
     font-family: Coustard;
     font-weight:500;
-    font-size: 1.2em;
+    font-size: 2em;
     display:inline;
+}
+.blinker {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transform:scale(2.0,1.0);
+    color:red;
+    animation: blinker 1.5s linear infinite alternate;
+}
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+}
+.container-fluid {
+    max-width: 1000px;
 }
 .nav {
     text-align: center;
@@ -29,27 +43,55 @@ h3 {
     margin: auto;
 }
 i {
-    margin: 8px 10px 0 0;
-    color: #FFFFFF;
+    color: rgb(95, 127, 255);
     display: inline;
 }
-thead {
+.table thead th {
+    width: 100% !important;
     text-align: center;
+    border-bottom: 0px !important;
 }
 input {
-    border: 2px solid white !important;
-    background: transparent !important;
-    color: #FFF !important; 
+    outline: none !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: rgb(95, 127, 255) !important; 
+    box-shadow: none !important;
 }
 input:focus {
     outline: none !important;
-    border: 2px solid rgb(255, 208, 0) !important;
-    box-shadow: inset 0 0 10px rgb(0, 0, 0, 0.3) !important;
-    background-color: rgba(0, 0, 0, 0.1) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgba(255, 255, 255, 0.836) !important;
-    opacity: 1; /* Firefox */
+input::-webkit-input-placeholder {
+    color: rgba(95, 127, 255, 0.8);
+}
+input:focus::-webkit-input-placeholder {
+    color: rgba(95, 127, 255, 0.3);
+}
+
+/* Firefox < 19 */
+input:-moz-placeholder {
+    color: rgba(95, 127, 255, 0.8);
+}
+input:focus:-moz-placeholder {
+    color: rgba(95, 127, 255, 0.3);
+}
+
+/* Firefox > 19 */
+input::-moz-placeholder {
+    color: rgba(95, 127, 255, 0.8);
+}
+input:focus::-moz-placeholder {
+    color: rgba(95, 127, 255, 0.3);
+}
+
+/* Internet Explorer 10 */
+input:-ms-input-placeholder {
+    color: rgba(95, 127, 255, 0.8);
+}
+input:focus:-ms-input-placeholder {
+    color: rgba(95, 127, 255, 0.3);
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
@@ -61,10 +103,12 @@ input:focus {
 }
 .input-group {
     color: #FFF;
-    max-width: 400px;
+    max-width: 500px;
+    width: 100%;
     margin-bottom: 0 !important;
 }
 #search-icon {
+    color: rgb(95, 127, 255) !important;
     font-weight: bold;
     font-size: 1.3em;
     -webkit-transform: rotate(-45deg); 
@@ -72,7 +116,17 @@ input:focus {
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
+#search-btn {
+    border: 0px !important;
+    outline: none !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: none !important;
+}
 .filter {
     display: inline;
     max-width: fit-content;
+}
+input[type="text"] {
+    background: transparent;
+    border: none;
 }
