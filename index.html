@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tweak.tv - See who's streaming on Twitch</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600|Montserrat|Coustard:400,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="nav-item">
+            <h1>tweak</h1><h3>.tv</h3>
+        </li>
+    </ul>
+    
+    
+    <div class="container-fluid">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"><div class="header">
+                        <form class="filter" action="javascript:void(0);">
+                            <div class="input-group mb-3 input-group-warning">
+                                    <div class="input-group-prepend">
+                                            <span class="input-group-text" id="search-btn"><i class="fab fa-twitch fa-2x"></i></span>
+                                        </div>
+                                <input id="query" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" autofocus>
+                                
+                                <div class="input-group-append">
+                                    <button id="search-btn" class="btn btn-outline-warning" type="button" data-toggle="tooltip" data-placement="bottom" title="Search"><div id="search-icon">&#9906;</div></button>
+                                </div>
+                            </div>  
+                        </form>
+                    </div></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+      
+    <!-- jQuery, Popper and Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="script.js" type="application/javascript"></script>
+</body>
+</html>
