@@ -2,7 +2,7 @@ body {
     background-color: rgb(95, 127, 255);
 }
 .header {
-    display:inline-flex;
+    margin: auto;
 }
 h1 {
     color: rgb(255, 255, 255);
@@ -31,6 +31,7 @@ h3 {
 }
 .container-fluid {
     max-width: 1000px;
+    width: 80%;
 }
 .nav {
     text-align: center;
@@ -45,6 +46,9 @@ i {
     color: rgb(95, 127, 255);
     display: inline;
     line-height: 1.5em !important;
+}.table {
+    display: table;
+    margin-top: 20px;
 }
 .table thead th {
     width: 100% !important;
@@ -99,8 +103,7 @@ input:focus:-ms-input-placeholder {
 .input-group {
     color: #FFF;
     max-width: 500px;
-    min-width: 350px;
-    margin-bottom: 0 !important;
+    margin: auto;
     -moz-box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.5);;
     box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.5);;
