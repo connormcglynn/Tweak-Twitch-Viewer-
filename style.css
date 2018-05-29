@@ -4,6 +4,11 @@ body {
 .header {
     margin: auto;
 }
+a, a:hover {
+    text-decoration: none;
+    font-weight: bolder;
+    color: rgb(0, 67, 139);
+}
 h1 {
     color: rgb(255, 255, 255);
     font-family: Coustard;
@@ -46,14 +51,26 @@ i {
     color: rgb(95, 127, 255);
     display: inline;
     line-height: 1.5em !important;
-}.table {
-    display: table;
-    margin-top: 20px;
+}
+.table {
+    font-family: Montserrat;
+    font-weight: bold;
+    border-collapse: separate;
+    border-spacing: 0 .25em;
 }
 .table thead th {
     width: 100% !important;
     text-align: center;
     border-bottom: 0px !important;
+}
+.table td {
+    background-color: rgb(255, 255, 255, 0.9);
+    vertical-align: middle;
+}
+tr {
+    -moz-box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.5);;
+    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.5);;
 }
 input {
     outline: none !important;
