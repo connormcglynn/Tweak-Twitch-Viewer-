@@ -32,21 +32,20 @@ $(document).ready(function() {
     };
     function render(res){
         $('#res').append("<tr id='resultdiv'><td><a target='_blank' href='"+res.url+"'><img src='"+res.logo+"' width='50px'></a></td><td><a target='_blank' href='"+res.url+"'>"+res.display_name+"</a></td><td class='status'><a target='_blank' href='"+res.url+"'>"+res.status+"</a></td></tr>");
-        var resObj = res;
-        for (var i in resObj) {
-            if ($('.status')[i].innerText == "null") {
-                // 
-                console.log(res.status);
-            } else {
-                // console.log(res.status);
-            }
-        }
     };
-    function twitchStreamCheck() {
-        var userArr = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
-        userArr.forEach(function (userArr) {
+    function sRender(res){ // TRY USING forEach on the res array
+        if (res.stream == null){
+            $('td').css({'opacity' : '0.5'});
+            alert('Hmm, seems like all of the streams are offline. Try searching for a user?')
+        }  else {
+            console.log('All streams available');
+        }
+    }
+    function twitchChannelCheck() {
+        var chanArr = ["EASPORTSFIFA", "ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "habathcx", "RobotCaleb", "noobs2ninjas"];
+        chanArr.forEach(function (chanArr) {
             $.ajax({
-                url: "https://wind-bow.glitch.me/twitch-api/channels/" + userArr,
+                url: "https://wind-bow.glitch.me/twitch-api/channels/" + chanArr,
                 type: 'GET',
                 dataType: 'json',
                 success: function(res) {
@@ -54,12 +53,28 @@ $(document).ready(function() {
                 },
                 error: function(err) {
                     console.log(err);
-                    alert("Could not retrieve streamer data, try refreshing the page.");
-
+                    alert("Could not retrieve channel data, try refreshing the page.");
                 }
             });
         });
-
+    };
+    twitchChannelCheck();
+    function twitchStreamCheck() {
+        var streamArr = ["EASports", "ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "habathcx", "RobotCaleb", "noobs2ninjas"];
+        streamArr.forEach(function (streamArr) {
+            $.ajax({
+                url: "https://wind-bow.glitch.me/twitch-api/streams/" + streamArr,
+                type: 'GET',
+                dataType: 'json',
+                success: function(res) {
+                    sRender(res);
+                },
+                error: function(err) {
+                    console.log(err);
+                    alert("Could not retrieve streamer data, try refreshing the page.");
+                }
+            });
+        });
     };
     twitchStreamCheck();
 });
