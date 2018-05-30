@@ -63,6 +63,15 @@ i {
     text-align: center;
     border-bottom: 0px !important;
 }
+.unavailable {
+    opacity: 0.5;
+}
+.offline {
+
+}
+.online {
+    
+}
 .table td {
     background-color: rgb(255, 255, 255, 0.9);
     vertical-align: middle;
@@ -126,11 +135,14 @@ input:focus:-ms-input-placeholder {
     -webkit-box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.5);;
     box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.5);;
 }
+.input-group-append {
+    margin-left: 0px;
+}
 #search-icon {
-    padding: 0 3px 0 3px;
+    padding: 0 10px 5px 7px;
     color: rgb(95, 127, 255) !important;
-    font-weight: bold;
-    font-size: 1.6em;
+    font-weight: bolder;
+    font-size: 1.8em;
     -webkit-transform: rotate(-45deg); 
     -moz-transform: rotate(-45deg); 
     -o-transform: rotate(-45deg);
