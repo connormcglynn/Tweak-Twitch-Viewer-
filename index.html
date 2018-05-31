@@ -19,21 +19,32 @@
         </li>
     </ul>
     
-    
     <div class="container-fluid">
-            <div class="header">
-                    <form class="filter" action="javascript:void(0);">
-                        <div class="input-group mb-3 input-group-warning">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="twitch-btn"><i class="fab fa-twitch fa-2x"></i></span>
-                            </div>
-                            <input id="query" type="text" class="form-control form-control-lg" placeholder="Enter channel name" aria-label="Search" aria-describedby="basic-addon2" autofocus>
-                            <div class="input-group-append">
-                                <button id="search-btn" class="btn" type="button" data-toggle="tooltip" data-placement="bottom" title="Search"><div id="search-icon">&#9906;</div></button>
-                            </div>
-                        </div>  
-                    </form>
-                </div>
+        <div class="header">
+            <form class="filter" action="javascript:void(0);">
+                <div class="input-group mb-3 input-group-warning">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="twitch-btn"><i class="fab fa-twitch fa-2x"></i></span>
+                    </div>
+                    <input id="query" type="text" class="form-control form-control-lg" placeholder="Enter channel name" aria-label="Search" aria-describedby="basic-addon2" autofocus>
+                    <div class="input-group-append">
+                        <button id="search-btn" class="btn" type="button" data-toggle="tooltip" data-placement="bottom" title="Search"><div id="search-icon">&#9906;</div></button>
+                    </div>
+                </div> 
+                <div class="btn-group btn-group-toggle btn-group-lg" data-toggle="buttons">
+                        <label class="btn btn-secondary all-btn active">
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked> All
+                        </label>
+                        <label class="btn btn-secondary online-btn">
+                            <input type="radio" name="options" id="option2" autocomplete="off"> Online
+                        </label>
+                        <label class="btn btn-secondary offline-btn">
+                            <input type="radio" name="options" id="option3" autocomplete="off"> Offline
+                        </label>
+                </div> 
+            </form>
+                
+        </div>
         <table class="table table-hover">
             <tbody id="res">
                 <!-- JSON data populates here -->
