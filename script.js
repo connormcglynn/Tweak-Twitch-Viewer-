@@ -1,23 +1,7 @@
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
-
+// Declare array of channels to iterate over
 const channels = ["EASportsFIFA", "ESL_SC2", "OgamingSC2", "cretetion", "storbeck", "food", "c4mlann", "ninja", "bethesda", "freecodecamp", "habathcx", "RobotCaleb", "noobs2ninjas", "overwatchleague", "shroud"]
 
-var getData = (data) => { 
-var user = data._links.self.substr(37);
-console.log(data);
-if (data.stream != null) {
-    var logo = data.stream.channel.logo;
-    var name = data.stream.channel.display_name;
-    var game = data.stream.game;
-    var status = data.stream.channel.status;
-    $('#res').append("<tr class='online'><td><a target='_blank' href='https://www.twitch.tv/" + user + "'><img src='" + logo + "' width='50px'></a></td><td><a target='_blank' href='https://www.twitch.tv/" + user + "'>" + name + "</a></td><td><a target='_blank' href='https://www.twitch.tv/" + user + "'>" + status + "</a></td></tr>");
-} else {
-    $('#res').append("<tr class='offline'><td><a target='_blank' href='https://www.twitch.tv/" + user + "'><img src='user_placeholder.png' width='50px'></a></td><td><a target='_blank' href='https://www.twitch.tv/" + user + "'>" + user + "</a></td><td><a target='_blank' href='https://www.twitch.tv/" + user + "'>(currently offline)</a></td></tr>");
-    }
-}
-
+// Make API call 
 var ajax = (streamer) => {
     $.ajax({
         url: 'https://wind-bow.gomix.me/twitch-api/streams/' + streamer + "?callback=?",
@@ -32,6 +16,22 @@ var ajax = (streamer) => {
     }
 )};
 
+// Parse JSON data and update HTML
+var getData = (data) => { 
+    var user = data._links.self.substr(37);
+    console.log(data);
+    if (data.stream != null) {
+        var logo = data.stream.channel.logo;
+        var name = data.stream.channel.display_name;
+        var game = data.stream.game;
+        var status = data.stream.channel.status;
+        $('#res').append("<tr class='online'><td><a target='_blank' href='https://www.twitch.tv/" + user + "'><img src='" + logo + "' width='50px'></a></td><td><a target='_blank' href='https://www.twitch.tv/" + user + "'>" + name + "</a></td><td><a target='_blank' href='https://www.twitch.tv/" + user + "'>" + status + "</a></td></tr>");
+    } else {
+        $('#res').append("<tr class='offline'><td><a target='_blank' href='https://www.twitch.tv/" + user + "'><img src='user_placeholder.png' width='50px'></a></td><td><a target='_blank' href='https://www.twitch.tv/" + user + "'>" + user + "</a></td><td><a target='_blank' href='https://www.twitch.tv/" + user + "'>(currently offline)</a></td></tr>");
+        }
+    }
+
+// Button setup to filter between online / offline streams
 $(".online-btn").on('click', () => {
     if ($(".online-btn").hasClass('active') == false) {
         $(".all-btn").removeClass('active');
@@ -60,14 +60,19 @@ $(".all-btn").on('click', () => {
     }
 });
 
-
+// Run the for loop to iterate through the channel array
 $(document).ready( () => {
     for (var i = 0; i < channels.length; i++) {
         ajax(channels[i]);
     }
 });
 
+// A tooltip function required by Bootstrap for the search icon
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+});
 
+// Functionality for the channel search bar
 $('#query').keypress (function(e) {
     if (e.which == 13) {//Enter key pressed
         $('#search-btn').click();//Trigger search button click event
